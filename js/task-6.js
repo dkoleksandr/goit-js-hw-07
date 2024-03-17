@@ -12,10 +12,10 @@ const boxesEl = document.querySelector('#boxes');
 createEl.addEventListener('click', handleCreate);
 
 function handleCreate() {
-  if (createBoxes(inputEl.value)) {
-    boxesEl.innerHTML = createBoxes(inputEl.value);
+  if (createBoxes(inputEl.currentTarget.value)) {
+    boxesEl.innerHTML = createBoxes(inputEl.currentTarget.value);
   }
-  inputEl.value = '';
+  inputEl.currentTarget.value = '';
 }
 
 function createBoxes(amount) {
