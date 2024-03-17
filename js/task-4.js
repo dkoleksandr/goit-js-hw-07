@@ -6,7 +6,7 @@ formEL.addEventListener('submit', handlerForm);
 
 function handlerForm(event) {
   event.preventDefault();
-  
+
   const email = formEL.elements.email;
   const password = formEL.elements.password;
 
@@ -18,5 +18,5 @@ function handlerForm(event) {
     [password.type]: password.value.trim(),
   });
 
-    formEL.reset();
+  formEL.reset();
 }
