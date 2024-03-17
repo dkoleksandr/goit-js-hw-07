@@ -12,11 +12,12 @@ function handlerForm(event) {
 
   if (email.value === '' || password.value === '') {
     alert('All form fields must be filled in');
+  } else {
+    console.log({
+      [email.type]: email.value.trim(),
+      [password.type]: password.value.trim(),
+    });
   }
-  console.log({
-    [email.type]: email.value.trim(),
-    [password.type]: password.value.trim(),
-  });
 
   formEL.reset();
 }
