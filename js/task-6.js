@@ -15,24 +15,23 @@ function handleCreate() {
   if (createBoxes(inputEl.value)) {
     boxesEl.innerHTML = createBoxes(inputEl.value);
   }
+  inputEl.value = '';
 }
 
 function createBoxes(amount) {
   if (amount >= 1 && amount <= 100) {
-    const arrayOfDiv = [];
+    let htmlOfDiv = '';
     let width = 30;
     let height = 30;
 
     for (let index = 1; index <= amount; index += 1) {
       let backgroundColor = getRandomHexColor();
 
-      arrayOfDiv.push(
-        `<div style="width:${width}px; height:${height}px; background-color:${backgroundColor}"></div>`
-      );
+      htmlOfDiv += `<div style="width:${width}px; height:${height}px; background-color:${backgroundColor}"></div>`;
       width += 10;
       height += 10;
     }
-    return arrayOfDiv.join('');
+    return htmlOfDiv;
   }
 }
 
